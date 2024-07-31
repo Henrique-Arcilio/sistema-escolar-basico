@@ -26,7 +26,7 @@ public class AppInterface extends Application {
     @Override
     public void start(Stage stage){
         try {
-            Parent root = FXMLLoader.load((getClass().getResource("/CadastroUsuario.fxml")));
+            Parent root = FXMLLoader.load((getClass().getResource("/TelaDoAluno.fxml")));
             Scene cena = new Scene(root);
             stage.setResizable(false);
             stage.setTitle("Efetuando Login");

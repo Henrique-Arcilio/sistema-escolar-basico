@@ -10,11 +10,10 @@ public class Professor extends Usuario implements Funcionario {
 	private BigDecimal salario;
 	private Disciplina disciplina;
 	
-	public Professor(Funcao funcao, String nome, LocalDate idade, 
-					String matricula, String senha,
+	public Professor(Funcao funcao, String nome, String senha, LocalDate nascimento,
 					BigDecimal salario, Disciplina disciplina) {
 		
-		super(funcao, nome, idade, matricula, senha);
+		super(funcao, nome, senha, nascimento);
 		this.salario = salario;
 		this.disciplina = disciplina;
 		

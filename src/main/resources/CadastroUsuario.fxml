@@ -6,11 +6,12 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arcilio.henrique.sistema_escolar.controller.ControllerCadastro">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="86.0" prefWidth="600.0" text="Cadastrando Usuário" textAlignment="CENTER">
          <font>
@@ -24,7 +25,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <TextField layoutX="169.0" layoutY="34.0" prefHeight="35.0" prefWidth="424.0">
+            <TextField fx:id="campoNome" layoutX="169.0" layoutY="34.0" prefHeight="35.0" prefWidth="424.0">
                <font>
                   <Font name="Verdana" size="18.0" />
                </font>
@@ -38,13 +39,16 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <DatePicker layoutX="170.0" layoutY="18.0" prefHeight="25.0" prefWidth="160.0" />
-            <RadioButton layoutX="388.0" layoutY="19.0" mnemonicParsing="false" text="Docente">
+            <DatePicker fx:id="nascimento" layoutX="170.0" layoutY="18.0" prefHeight="25.0" prefWidth="160.0" />
+            <RadioButton fx:id="optionDocente" layoutX="388.0" layoutY="19.0" mnemonicParsing="false" selected="true" text="Docente">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="tipo" />
+               </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="496.0" layoutY="19.0" mnemonicParsing="false" text="Discente">
+            <RadioButton fx:id="optionDiscente" layoutX="496.0" layoutY="19.0" mnemonicParsing="false" text="Discente" toggleGroup="$tipo">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>
@@ -58,7 +62,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <PasswordField layoutX="170.0" layoutY="21.0" prefHeight="27.0" prefWidth="160.0" />
+            <PasswordField fx:id="campoSenha" layoutX="170.0" layoutY="21.0" prefHeight="27.0" prefWidth="160.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="72.0" prefWidth="600.0">
@@ -68,17 +72,17 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <PasswordField layoutX="170.0" layoutY="20.0" prefHeight="27.0" prefWidth="160.0" />
+            <PasswordField fx:id="campoConfirmacaoSenha" layoutX="170.0" layoutY="20.0" prefHeight="27.0" prefWidth="160.0" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="76.0" prefWidth="596.0">
          <children>
-            <Button layoutX="167.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="119.0" text="Cadastrar">
+            <Button layoutX="167.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="57.0" prefWidth="119.0" text="Cadastrar">
                <font>
                   <Font name="Verdana Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="329.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="119.0" text="Cancelar">
+            <Button layoutX="329.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="57.0" prefWidth="119.0" text="Cancelar">
                <font>
                   <Font name="Verdana Bold" size="14.0" />
                </font>

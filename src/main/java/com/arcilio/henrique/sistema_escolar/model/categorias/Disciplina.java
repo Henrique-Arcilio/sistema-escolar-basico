@@ -1,7 +1,6 @@
 package com.arcilio.henrique.sistema_escolar.model.categorias;
 
 public enum Disciplina {
-	
 	PORTUGUES("Lingua Portuguêsa"),
 	MATEMATICA("Matemática Básica"),
 	FISICA("Física"),
@@ -10,6 +9,7 @@ public enum Disciplina {
 	HISTORIA("História"),
 	GEOGRAFIA("Geografia"),
 	ARTES("Artes");
+
 	
 	private final String nome;
 	

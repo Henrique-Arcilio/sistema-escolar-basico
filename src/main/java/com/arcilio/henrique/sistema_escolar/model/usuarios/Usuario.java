@@ -8,16 +8,16 @@ public abstract class Usuario {
 	
 	private Funcao funcao;
 	private String nome;
-	private LocalDate idade;
-	private String matricula;
 	private String senha;
+	private LocalDate nascimento;
+	private String matricula;
 
-	public Usuario(Funcao funcao, String nome, LocalDate idade, String matricula, String senha) {
+
+	public Usuario(Funcao funcao, String nome, String senha, LocalDate nascimento) {
 		this.funcao = funcao;
 		this.nome = nome;
-		this.idade = idade;
-		this.matricula = matricula;
 		this.senha = senha;
+		this.nascimento = nascimento;
 	}
 	
 	public String getNome() {
@@ -26,12 +26,23 @@ public abstract class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public LocalDate getIdade() {
-		return idade;
+
+	public LocalDate getNascimento() {
+		return nascimento;
 	}
-	public void setIdade(LocalDate idade) {
-		this.idade = idade;
+
+	public void setNascimento(LocalDate nascimento) {
+		this.nascimento = nascimento;
 	}
+
+	public Funcao getFuncao() {
+		return funcao;
+	}
+
+	public void setFuncao(Funcao funcao) {
+		this.funcao = funcao;
+	}
+
 	public String getMatricula() {
 		return matricula;
 	}

@@ -12,10 +12,10 @@ public class Aluno extends Usuario {
 	private BigDecimal mediaFinal;
 	
 	
-	public Aluno(Funcao funcao, String nome, LocalDate idade, 
-				String matricula, String senha, Turma turma) {
+	public Aluno(Funcao funcao, String nome,  String senha,
+				 LocalDate nascimento, Turma turma) {
 		
-		super(funcao, nome, idade, matricula, senha);
+		super(funcao, nome, senha, nascimento);
 		this.turma = turma;
 		this.notas = new BigDecimal[3];
 		this.mediaFinal = new BigDecimal(0);

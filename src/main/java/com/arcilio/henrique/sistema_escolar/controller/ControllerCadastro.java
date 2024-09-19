@@ -1,11 +1,12 @@
 package com.arcilio.henrique.sistema_escolar.controller;
 
+import com.arcilio.henrique.sistema_escolar.dao.DaoAlunos;
+import com.arcilio.henrique.sistema_escolar.dao.DaoDocentes;
 import com.arcilio.henrique.sistema_escolar.model.categorias.Funcao;
 import com.arcilio.henrique.sistema_escolar.model.usuarios.Aluno;
 import com.arcilio.henrique.sistema_escolar.model.usuarios.Professor;
 import com.arcilio.henrique.sistema_escolar.model.usuarios.Usuario;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -42,17 +43,15 @@ public class ControllerCadastro {
             BCryptPasswordEncoder encriptador = new BCryptPasswordEncoder();
             String senha = encriptador.encode(campoSenha.getText());
             String confirmacao = encriptador.encode(campoConfirmacaoSenha.getText());
-            System.out.println(senha);
             Usuario usuario = null;
-
 
             if(optionDocente.isSelected()){
                 BigDecimal salario = new BigDecimal("0");
                 usuario = new Professor(Funcao.PROFESSOR, nome, senha, dataNascimento, salario, null);
-                //chamar metodo de cadastrar docente
+                DaoDocentes.cadastrar(usuario);
             }else{
                 usuario = new Aluno(Funcao.ALUNO, nome, senha, dataNascimento, null);
-                //chamar metodo de cadastrar discente
+                DaoAlunos.cadastrar(usuario);
             }
             Stage janelaAtual = (Stage) ((Node) event.getSource()).getScene().getWindow();
             janelaAtual.close();

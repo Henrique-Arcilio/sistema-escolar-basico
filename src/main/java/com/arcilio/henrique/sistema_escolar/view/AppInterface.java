@@ -1,5 +1,6 @@
 package com.arcilio.henrique.sistema_escolar.view;
 
+import com.arcilio.henrique.sistema_escolar.dao.Utilitario;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,15 +27,21 @@ public class AppInterface extends Application {
     @Override
     public void start(Stage stage){
         try {
-            Parent root = FXMLLoader.load((getClass().getResource("/CadastroUsuario.fxml")));
+            String fxmlDaJanela = "/TelaLogin.fxml";
+            String titulo = "Efetuando login";
+            if(Utilitario.contarRegistros("docentes") == 0){
+                fxmlDaJanela = "/CadastroUsuario.fxml";
+                titulo = "Cadastrando Usuário";
+            }
+            Parent root = FXMLLoader.load((getClass().getResource(fxmlDaJanela)));
             Scene cena = new Scene(root);
             stage.setResizable(false);
-            stage.setTitle("Efetuando Login");
+            stage.setTitle(titulo);
             stage.setScene(cena);
             stage.show();
         }
         catch (IOException e){
-            System.out.println(e.getStackTrace());
+            System.out.println(e.getMessage());
         }
     }
 }

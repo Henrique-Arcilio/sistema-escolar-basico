@@ -1,7 +1,7 @@
 package com.arcilio.henrique.sistema_escolar.model.categorias;
 
 public enum Turno {
-	MATUTINO("Noturno"),
+	MATUTINO("Matutino"),
 	VESPERTINO("Vespertino"),
 	NOTURNO("Noturno");
 	

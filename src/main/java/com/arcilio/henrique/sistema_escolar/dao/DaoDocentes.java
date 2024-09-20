@@ -22,7 +22,6 @@ public class DaoDocentes {
             comandoPredefinido.setDate(3, Date.valueOf(usuario.getNascimento()));
             comandoPredefinido.setString(4, Utilitario.gerarMatricula(usuario));
             comandoPredefinido.setString(5, usuario.getFuncao().toString());
-
             comandoPredefinido.execute();
             comandoPredefinido.close();
             conexao.close();

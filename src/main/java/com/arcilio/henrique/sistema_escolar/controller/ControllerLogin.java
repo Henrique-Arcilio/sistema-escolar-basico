@@ -29,7 +29,6 @@ public class ControllerLogin {
         String senhaDigitada = campoSenha.getText();
         Usuario usuario = DaoDocentes.buscar(matricula, "docentes");
         if (BCrypt.checkpw(senhaDigitada, usuario.getSenha())) {
-
             janelaAtual = (Stage) ((Node) event.getSource()).getScene().getWindow();
             if (usuario instanceof Diretor) {
                 mudarTela("/TelaDoDiretor.fxml", "Área do Diretor");

@@ -6,6 +6,10 @@ import com.arcilio.henrique.sistema_escolar.model.usuarios.Usuario;
 import java.sql.*;
 
 public class Utilitario {
+    public boolean verificarExistenciaDiretor(){
+        int quantiDeUsuarios = contarRegistros("docentes");
+        return quantiDeUsuarios != 0;
+    }
     public static String gerarMatricula(Usuario usuario){
         String cargo = null;
         switch (usuario.getFuncao()){

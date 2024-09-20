@@ -2,19 +2,19 @@ package com.arcilio.henrique.sistema_escolar.model.usuarios;
 
 import java.time.LocalDate;
 
-import com.arcilio.henrique.sistema_escolar.model.categorias.Funcao;
+import com.arcilio.henrique.sistema_escolar.model.categorias.Cargo;
 
 public abstract class Usuario {
 	
-	private Funcao funcao;
+	private Cargo cargo;
 	private String nome;
 	private String senha;
 	private LocalDate nascimento;
 	private String matricula;
 
 
-	public Usuario(Funcao funcao, String nome, String senha, LocalDate nascimento) {
-		this.funcao = funcao;
+	public Usuario(Cargo cargo, String nome, String senha, LocalDate nascimento) {
+		this.cargo = cargo;
 		this.nome = nome;
 		this.senha = senha;
 		this.nascimento = nascimento;
@@ -35,12 +35,12 @@ public abstract class Usuario {
 		this.nascimento = nascimento;
 	}
 
-	public Funcao getFuncao() {
-		return funcao;
+	public Cargo getFuncao() {
+		return cargo;
 	}
 
-	public void setFuncao(Funcao funcao) {
-		this.funcao = funcao;
+	public void setFuncao(Cargo cargo) {
+		this.cargo = cargo;
 	}
 
 	public String getMatricula() {

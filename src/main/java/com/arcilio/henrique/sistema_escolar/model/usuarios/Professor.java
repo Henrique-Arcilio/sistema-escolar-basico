@@ -3,17 +3,17 @@ package com.arcilio.henrique.sistema_escolar.model.usuarios;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.arcilio.henrique.sistema_escolar.model.categorias.Funcao;
+import com.arcilio.henrique.sistema_escolar.model.categorias.Cargo;
 import com.arcilio.henrique.sistema_escolar.model.categorias.Disciplina;
 
 public class Professor extends Usuario implements Funcionario {
 	private BigDecimal salario;
 	private Disciplina disciplina;
 	
-	public Professor(Funcao funcao, String nome, String senha, LocalDate nascimento,
-					BigDecimal salario, Disciplina disciplina) {
+	public Professor(Cargo cargo, String nome, String senha, LocalDate nascimento,
+					 BigDecimal salario, Disciplina disciplina) {
 		
-		super(funcao, nome, senha, nascimento);
+		super(cargo, nome, senha, nascimento);
 		this.salario = salario;
 		this.disciplina = disciplina;
 		

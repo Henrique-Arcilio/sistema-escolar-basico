@@ -2,7 +2,7 @@ package com.arcilio.henrique.sistema_escolar.controller;
 
 import com.arcilio.henrique.sistema_escolar.dao.DaoAlunos;
 import com.arcilio.henrique.sistema_escolar.dao.DaoDocentes;
-import com.arcilio.henrique.sistema_escolar.model.categorias.Funcao;
+import com.arcilio.henrique.sistema_escolar.model.categorias.Cargo;
 import com.arcilio.henrique.sistema_escolar.model.usuarios.Aluno;
 import com.arcilio.henrique.sistema_escolar.model.usuarios.Professor;
 import com.arcilio.henrique.sistema_escolar.model.usuarios.Usuario;
@@ -47,10 +47,10 @@ public class ControllerCadastro {
 
             if(optionDocente.isSelected()){
                 BigDecimal salario = new BigDecimal("0");
-                usuario = new Professor(Funcao.PROFESSOR, nome, senha, dataNascimento, salario, null);
+                usuario = new Professor(Cargo.PROFESSOR, nome, senha, dataNascimento, salario, null);
                 DaoDocentes.cadastrar(usuario);
             }else{
-                usuario = new Aluno(Funcao.ALUNO, nome, senha, dataNascimento, null);
+                usuario = new Aluno(Cargo.ALUNO, nome, senha, dataNascimento, null);
                 DaoAlunos.cadastrar(usuario);
             }
             Stage janelaAtual = (Stage) ((Node) event.getSource()).getScene().getWindow();

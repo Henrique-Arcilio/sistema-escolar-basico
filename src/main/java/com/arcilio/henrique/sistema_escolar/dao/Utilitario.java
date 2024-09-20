@@ -1,6 +1,6 @@
 package com.arcilio.henrique.sistema_escolar.dao;
 
-import com.arcilio.henrique.sistema_escolar.model.categorias.Funcao;
+import com.arcilio.henrique.sistema_escolar.model.categorias.Cargo;
 import com.arcilio.henrique.sistema_escolar.model.usuarios.Usuario;
 
 import java.sql.*;
@@ -9,11 +9,11 @@ public class Utilitario {
     public static String gerarMatricula(Usuario usuario){
         String cargo = null;
         switch (usuario.getFuncao()){
-            case Funcao.ALUNO:
+            case Cargo.ALUNO:
                 cargo = "A" + "2024" + (contarRegistros("alunos") + 1);
-            case Funcao.DIRETOR:
+            case Cargo.DIRETOR:
                 cargo = "D" + "2024" + (contarRegistros("docentes") + 1);
-            case Funcao.PROFESSOR:
+            case Cargo.PROFESSOR:
                 cargo = "P" + "2024" + (contarRegistros("docentes") + 1);
         }
         return cargo;

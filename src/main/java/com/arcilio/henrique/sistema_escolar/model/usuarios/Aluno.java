@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import com.arcilio.henrique.sistema_escolar.model.Turma;
-import com.arcilio.henrique.sistema_escolar.model.categorias.Funcao;
+import com.arcilio.henrique.sistema_escolar.model.categorias.Cargo;
 
 public class Aluno extends Usuario {
 	private Turma turma;
@@ -12,10 +12,10 @@ public class Aluno extends Usuario {
 	private BigDecimal mediaFinal;
 	
 	
-	public Aluno(Funcao funcao, String nome,  String senha,
-				 LocalDate nascimento, Turma turma) {
+	public Aluno(Cargo cargo, String nome, String senha,
+                 LocalDate nascimento, Turma turma) {
 		
-		super(funcao, nome, senha, nascimento);
+		super(cargo, nome, senha, nascimento);
 		this.turma = turma;
 		this.notas = new BigDecimal[3];
 		this.mediaFinal = new BigDecimal(0);

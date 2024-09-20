@@ -1,7 +1,7 @@
 package com.arcilio.henrique.sistema_escolar.model.categorias;
 
 public enum Disciplina {
-	SEM_DISCIPLIN("Não leciona"),
+	SEM_DISCIPLINA("Não leciona"),
 	PORTUGUES("Lingua Portuguêsa"),
 	MATEMATICA("Matemática Básica"),
 	FISICA("Física"),

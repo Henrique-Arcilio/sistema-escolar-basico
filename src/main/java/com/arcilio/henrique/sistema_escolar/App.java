@@ -1,5 +1,6 @@
 package com.arcilio.henrique.sistema_escolar;
 
+import com.arcilio.henrique.sistema_escolar.model.categorias.Disciplina;
 import com.arcilio.henrique.sistema_escolar.view.AppInterface;
 
 public class App {

@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -28,7 +29,13 @@ public class ControllerLogin {
         String matricula = campoMatricula.getText();
         String senhaDigitada = campoSenha.getText();
         Usuario usuario = DaoDocentes.buscar(matricula, "docentes");
-        if (BCrypt.checkpw(senhaDigitada, usuario.getSenha())) {
+
+        if(usuario == null){
+            Alert alerta = new Alert(Alert.AlertType.ERROR, "Credenciais incorretas");
+            alerta.setHeaderText(null);
+            alerta.showAndWait();
+        }
+        else if (BCrypt.checkpw(senhaDigitada, usuario.getSenha())) {
             janelaAtual = (Stage) ((Node) event.getSource()).getScene().getWindow();
             if (usuario instanceof Diretor) {
                 mudarTela("/TelaDoDiretor.fxml", "Área do Diretor");
@@ -53,7 +60,6 @@ public class ControllerLogin {
             janelaAtual.setTitle(titulo);
             janelaAtual.setScene(cena);
             janelaAtual.show();
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

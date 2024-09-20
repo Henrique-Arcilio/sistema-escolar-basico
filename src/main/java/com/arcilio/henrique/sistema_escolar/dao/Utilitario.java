@@ -15,10 +15,13 @@ public class Utilitario {
         switch (usuario.getFuncao()){
             case Cargo.ALUNO:
                 cargo = "A" + "2024" + (contarRegistros("alunos") + 1);
+                break;
             case Cargo.DIRETOR:
                 cargo = "D" + "2024" + (contarRegistros("docentes") + 1);
+                break;
             case Cargo.PROFESSOR:
                 cargo = "P" + "2024" + (contarRegistros("docentes") + 1);
+                break;
         }
         return cargo;
     }
